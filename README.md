@@ -2,7 +2,7 @@
 
 Simple Blog powered by Strapi, using the latest Next.js features like data caching and server components. Optimized for SEO and Performance, confirmed by Lighthouse tests.
 
-### Perfomance![performance](/public/img/performance.png)
+### ![performance](/public/img/performance.png)
 
 ## Screenshots
 
