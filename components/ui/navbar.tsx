@@ -48,7 +48,7 @@ export const Navbar = ({ categories }: NavbarProps) => {
         <ul className="hidden lg:flex gap-4 items-center justify-start ml-2">
           {siteConfig.navItems.map(item =>
             item.href === "/category" ? (
-              <DropdownCategories categories={categories} />
+              <DropdownCategories key={item.href} categories={categories} />
             ) : (
               <NavbarItem key={item.href}>
                 <NextLink

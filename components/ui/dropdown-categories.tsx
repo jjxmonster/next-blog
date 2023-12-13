@@ -1,4 +1,3 @@
-"use client";
 import { Category, StrapiObject } from "@/types";
 import { useRouter } from "next/navigation";
 import {
