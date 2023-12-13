@@ -2,6 +2,7 @@ import { PostsHeader } from "@/components/ui/posts-header";
 import { getPostBySlug, getPosts } from "@/data/post";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { Metadata } from "next";
 
 export const generateStaticParams = async () => {
   const posts = await getPosts();
@@ -9,6 +10,22 @@ export const generateStaticParams = async () => {
   return posts.map(post => ({
     slug: post.attributes.slug,
   }));
+};
+
+export const generateMetadata = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> => {
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: post[0].attributes.title,
+  };
 };
 
 export default async function PostsByCategory({

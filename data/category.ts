@@ -9,6 +9,7 @@ export const getCategories = async () => {
     },
     next: {
       tags: ["categories"],
+      revalidate: 2000,
     },
   });
   const data = (await response.json()) as ResponseData<Category>;

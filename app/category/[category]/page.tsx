@@ -3,13 +3,29 @@ import { PostsHeader } from "@/components/ui/posts-header";
 import { getPostsByCategory } from "@/data/post";
 import { getCategories, getCategoryBySlug } from "@/data/category";
 import { notFound } from "next/navigation";
-
+import { Metadata } from "next";
 export const generateStaticParams = async () => {
   const categories = await getCategories();
 
   return categories.map(category => ({
     category: category.attributes.slug,
   }));
+};
+
+export const generateMetadata = async ({
+  params: { category: slug },
+}: {
+  params: { category: string };
+}): Promise<Metadata> => {
+  const category = await getCategoryBySlug(slug);
+
+  if (!category) {
+    return {};
+  }
+
+  return {
+    title: category[0].attributes.name,
+  };
 };
 
 export default async function PostsByCategory({
@@ -30,7 +46,7 @@ export default async function PostsByCategory({
         title={posts[0].attributes.category.data.attributes.name}
         description={`${posts.length} Articles`}
       />
-      <div className="grid grid-cols-3 mt-20 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-10">
         {posts.map(post => (
           <div key={post.id}>
             <PostCard
