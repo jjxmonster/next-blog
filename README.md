@@ -1,6 +1,6 @@
 # Next.js Blog
 
-Simple Blog powered by Strapi, using the latest Next.js features like data caching and server components. Optimized for SEO and Performance, confirmed by Lighthouse tests.
+Simple Blog powered by Strapi, using the latest Next.js features like data caching, server components. Optimized for SEO and Performance, confirmed by Lighthouse tests. MDX is used to display the post content
 
 ### ![performance](/public/img/performance.png)
 
