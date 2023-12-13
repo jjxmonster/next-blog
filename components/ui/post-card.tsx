@@ -34,9 +34,7 @@ export const PostCard = ({
             {category}
           </b>
           <p className="text-start text-lg text-semibold">{title}</p>
-          <p className="text-default-500">
-            {/* {new Date(date).toLocaleDateString()} */}
-          </p>
+          <p className="text-default-500">{new Date(date).toDateString()}</p>
         </CardFooter>
       </Link>
     </Card>
