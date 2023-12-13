@@ -28,13 +28,13 @@ export const SearchInput = () => {
   return (
     <Input
       onChange={handleChange}
-      aria-label="Szukaj"
+      aria-label="Search"
       classNames={{
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
       labelPlacement="outside"
-      placeholder="Szukaj..."
+      placeholder="Search..."
       startContent={
         <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
       }
