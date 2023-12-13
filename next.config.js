@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "http", hostname: "strapi.server916785.nazwa.pl", port: "" },
+      { protocol: "http", hostname: process.env.STORAGE, port: "" },
     ],
   },
 };
