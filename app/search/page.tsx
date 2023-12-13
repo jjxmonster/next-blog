@@ -11,10 +11,10 @@ export default async function SearchPage({
 
   return (
     <div className="flex flex-col items-center">
-      <PostsHeader title={`Wyniki wyszukiwania dla: ${searchParams.query}`} />
+      <PostsHeader title={`Search results for: ${searchParams.query}`} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-10">
         {posts.length === 0 && (
-          <span className="col-span-3 text-gray-500">Brak postów.</span>
+          <span className="col-span-3 text-gray-500">No posts.</span>
         )}
         {posts.map(post => (
           <div key={post.id}>
